@@ -1,0 +1,238 @@
+* Introduction
+This series of blog posts is intended for complete guitar beginners, and also for people who may have played the guitar for a bit with tablatures, but who do not really understand how harmony works. 
+It is also suitable for more advanced players who would like to try a different approach.
+
+
+This series aims to propose an alternative to traditional teaching, by using:
+
+    - an alternative guitar tuning: The Major Third (M3) tuning
+    - an alternative music notation: Clairnote
+    - a non-conventional terminology for notes and intervals: integer numbers 
+
+I strongly believe that these three items are easier to understand compared to the traditional ones. 
+They allow to play music more naturally by having fewer things to remember. 
+I think that playing an instrument should be as natural and straightforward as singing.
+
+** My Background
+I have been playing the guitar for 10 years, but as I have not played very regularly, I would think my level is intermediate. 
+I learned to play the guitar using tablatures for many years, concentrating on the technique rather than the theory.
+
+More recently, I learned a bit about music theory and harmonization and how it translates to the guitar. 
+However, with my Maths/Computer science background, I found it striking that many concepts could be explained much more succinctly and logically 
+using numbers and arithmetics rather than letters and roman numerals !
+
+My musical inclination is towards blues / rock / heavy metal, but I also fancy a bit of pop and classical music from time to time.  
+** My first student
+My 14-years old daughter had taken guitar lessons for a few years and then stopped. 
+She is now keen on playing again, and I proposed to teach her using the non-conventional items outlined above. 
+She is not a true beginner, therefore some of the lessons might be too fast paced for complete beginners. 
+I will try to keep this in mind and maybe add additional lessons depending on your feedback.
+** Links
+- [[http://pedrokroger.net/mfgan/][Music for geeks and nerds]] is a very interesting short book. Highly recommended if you like programming
+- [[http://v3p1.m3guitar.com/][M3 Guitar]] describes how to tune your guitar in Major Thirds, and provides useful chords and scales diagrams
+- [[http://clairnote.org/][Clairnote]] is an alternative music notation which works very well with the Major Third tuning.
+- [[https://en.wikipedia.org/wiki/Pitch_class][Wikipedia: pitch class]] describes the theoretical background behind the integer notation that I will use in the lessons.
+** Feedback
+If you like this blog, if you do not understand something, if you think I should explain things differently, 
+or if you think my approach is completely wrong, I would welcome your feedback ! 
+Please leave a comment below.
+
+
+* Integer notation
+In all the lessons, I will use integer numbers from 0 to 11 for the names of the notes, 
+instead of the traditional C, D, E, F, G, A, B or Do Re Mi Fa Sol La Si.
+
+The reason for this unorthodox choice is that I find it much easier to do arithmetics with numbers rather than with letters !
+
+| Integer | English | Latin      |
+|---------+---------+------------|
+|       0 | C       | Do         |
+|       1 | C# / Db | Do# / Reb  |
+|       2 | D       | Re         |
+|       3 | D# / Eb | Re# / Mib  |
+|       4 | E       | Mi         |
+|       5 | F       | Fa         |
+|       6 | F# / Gb | Fa# / Solb |
+|       7 | G       | Sol        |
+|       8 | G# / Ab | Sol# / Lab |
+|       9 | A       | La         |
+|      10 | A# / Bb | La# / Sib  |
+|      11 | B       | Si         |
+
+In this notation, there is one *semitone* between 2 consecutive notes.
+12 seminotes constitute an *octave*. 
+Two notes separated by 12 semitones (or one octave) have the same name.
+
+* Tune your guitar
+We are going to use a special tuning, called "Major third tuning". 
+It means that there is a "Major Third" interval = 4 semitones, between two strings. 
+But we will come back later to these terms in more details.
+
+
+You do not need a special device for this, these days a phone or tablet does the job very well. 
+I would recommend PitchLab lite ([[https://play.google.com/store/apps/details?id=com.symbolic.pitchlab&hl=en_GB][here]] for Android, [[https://itunes.apple.com/gb/app/pitchlab-guitar-tuner-free/id732850624?mt=8][here]] for iPhone), but you can use any tuner as long as you can change the default notes for each string.
+
+
+You need to tune the strings with the following notes, from the highest pitched string to the lowest :
+
+#+BEGIN_EXAMPLE
+4 / C  |-------------| 6th string (highest pitch)
+8 / Ab |-------------| 5th string
+4 / E  |-------------| 4th string
+0 / C  |-------------| 3rd string
+8 / Ab |-------------| 2nd string
+4 / E  |-------------| 1st string (lowest pitch)
+#+END_EXAMPLE
+
+
+You can check that the guitar is well tuned by playing one string on the 4th fret and the following string open. 
+The two pitches must be exactly the same.
+Then do the the same for the 5th and 4th string, 4th and 3rd, ...
+
+
+#+BEGIN_EXAMPLE
+0 / C  |----------0--| 
+4 / Ab |-------0--4--|
+8 / E  |-------4-----|
+0 / C  |----0--------|
+4 / Ab |-0--4--------| 2nd string: open, do not press any fret, just play the string
+8 / E  |-4-----------| 1st string: press the 4th fret with your left index 
+#+END_EXAMPLE
+                      
+It is important to always play with a guitar in tune. 
+I would recommend to always tune your guitar before a practice session. 
+At this stage of your learning, you are creating connections between your different senses. 
+Your ears, fingers, and eyes are all learning the guitar. 
+If you get used to the guitar sounding out of tune, then you will take longer to overcome that.
+
+
+OK, now that our guitar is in tune, we are going to use Clairnote to play some scales. 
+* Clairnote
+Clairnote music notation is an alternative music notation system designed and introduced by Paul Morris in December 2013.
+If you are already familiar with the Traditional Notation (TN), you can go to the [[http://clairnote.org/][Clairnote website]] to understand the differences in more details.
+
+
+But given that this blog is intended for beginners, I will give you just enough information to get started.
+The clairnote music sheet below is a 0 / C chromatic scale, it starts with the note 0 / C and has 12 notes. 
+In this scale, each note is one "semitone" above the preceding one.
+
+** Chromatic scale
+#+name: staff
+#+begin_src org
+\include "clairnote-code.ly"
+\paper{
+  indent=0\\mm
+  line-width=170\\mm
+  oddFooterMarkup=##f
+  oddHeaderMarkup=##f
+  bookTitleMarkup=##f
+  scoreTitleMarkup=##f
+}
+\new Staff \with {
+  \remove "Accidental_engraver"
+  \remove "Key_engraver"
+} {
+  \melody
+}
+#+end_src
+
+#+begin_src lilypond :file chromatic.png :noweb yes
+melody = \relative c' { 
+  <c-0> <cis-1> <d-2> <dis-3> <e-4> <f-5> <fis-6> <g-7> <gis-8> <a-9> <ais-10> <b-11>  
+}
+<<staff()>>
+#+end_src
+#+results:
+[[file:chromatic.png]]
+
+
+TODO bigger PNG
+
+** Features
+- Hollow and solid note heads alternate to help indicate a note’s pitch and to make interval patterns easy to see.
+- The staff line are regularly spaced by *4 semitones*. 
+- The 0 / C staff line is invisible to make the staff less cluttered.  
+** On the guitar neck
+When we tuned our guitar earlier, we tuned it so that two consecutive strings are also separated by *4 semitones*.
+This correspondance means that you can almost treat the clairnote notation as a tablature, each staff line representing one string.
+
+Let's play the chromatic scale on the guitar. We must start with a 0 / C, and add one semitone each time. 
+On the guitar neck, one semitone = one fret. Here is the corresponding tablature:
+#+BEGIN_EXAMPLE
+0 / C  |--------------------------------------| 
+8 / Ab |-------------------------0--1--2--3---|
+4 / E  |-------------0--1--2--3---------------|
+0 / C  |-0--1--2--3---------------------------|
+8 / Ab |--------------------------------------| 
+4 / E  |--------------------------------------|
+#+END_EXAMPLE
+You can appreciate how close the tablature matches the clairnote staff, and how you can play the entire scale without moving your left arm. 
+
+One of the great features of the guitar is that you can play the same notes at different places on the neck.
+Let's play the same scale starting on the 4 / E string. Here is a trick to instantly find any note on a given string:
+- take the open string's note *s = 4 / E*
+- take the target note *n = 0*
+- calculate *f = n - s = 0 - 4 = -4*
+- if the resulting number f is negative, add 12 to it => *fret = -4 + 12 = 8*
+- that means that if we play the 8th fret on the 4 / E string, we will get a 0 / C note !
+#+BEGIN_EXAMPLE
+0 / C  |--------------------------------------| 
+8 / Ab |--------------------------------------|
+4 / E  |--------------------------------------|
+0 / C  |-------------------------8--9--10-11--| 
+8 / Ab |-------------8--9--10-11--------------|
+4 / E  |-8--9--10-11--------------------------|
+#+END_EXAMPLE
+
+
+* The major scale
+
+The major scale or Ionian scale is one of the most commonly used musical scales, especially in Western music. 
+Like many musical scales it is made up of seven notes.
+
+Here is a 0 / C major scale. Its name comes from the first note on the scale. 
+#+begin_src lilypond :file c-major-scale.png :noweb yes
+melody = \relative c' { 
+  <c-0> <d-2> <e-4> <f-5> <g-7> <a-9> <b-11>  
+}
+<<staff()>>
+#+end_src
+#+results:
+[[file:c-major-scale.png]]
+
+You should be able to play it on the guitar without a tablature. Observe the number of semitones between two notes:
+- when there is only +1 semitone, the note head changes from black to white, or from white to black.
+- on the guitar, play +1 fret. If you played a note n with your index, play n+1 with your middle finger. If you played n with your pinkie, play n+1 on the *following* string with your index.
+- when there are +2 semitones, the note head is the same, but it slightly higher on the staff
+- on the guitar, play +2 frets. Use the same rules w.r.t fingering: your left arm should not move.
+
+Here is the tablature for reference, but try to play by just looking at the clairnote staff.
+#+BEGIN_EXAMPLE
+0 / C  |---------------------------|
+8 / Ab |---------------------------| 
+4 / E  |---------------------------|
+0 / C  |----------------9--11------|
+8 / Ab |-------8--9--11------------|
+4 / E  |-8--10---------------------|
+#+END_EXAMPLE
+
+* Exercise 1
+Play the 9 / A major scale, starting on the 4 / E string, and then starting on the 8 / Ab string.
+
+#+begin_src lilypond :file a-major-scale.png :noweb yes
+melody = \relative c' { 
+  <a-9> <b-11> <cis-1> <d-2> <e-4> <fis-6> <gis-8>
+}
+<<staff()>>
+#+end_src
+#+results:
+[[file:a-major-scale.png]]
+
+
+* Exercise 2
+Play a simple song that you already know which only uses the major scale.
+For instance you can try "Happy Birthday", "Jingle Bells", "Au clair de la lune", ...
+
+Start playing it in the 0 / C *Key*, which means that you will use only the notes of the 0 / C major scale. 
+Once your have found the right notes and the right rythm, try playing it in another key, 
+and/or try playing it in the same key, but start from a different string. 
